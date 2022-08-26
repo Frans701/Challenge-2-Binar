@@ -12,4 +12,4 @@ const getSplitName = (personName) => {
   return obj;
 };
 
-console.log(getSplitName("frans wahyu"));
+console.log(getSplitName("frans wahyu virgawan"));

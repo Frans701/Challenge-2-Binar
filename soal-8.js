@@ -66,7 +66,53 @@ function getInfoPenjualan(dataPenjualanNovel) {
 
   percentage = (sumKeuntungnAkhir / sumModal) * 1;
 
-  return ` ${sumKeuntungnAkhir}, ${sumModal}, ${percentage.toFixed(2)}%`;
+  // banyak terjual
+  const banyakTerjual = dataPenjualanNovel.map((object) => {
+    return object.totalTerjual;
+  });
+
+  let max = Math.max(...banyakTerjual);
+
+  // console.log(max);
+
+  // nama barang terlaris
+  let productName = [];
+  const namaProduct = dataPenjualanNovel.map((object) => {
+    let i;
+    if (object.totalTerjual == max) {
+      i = object.namaProduk;
+      productName.push(i);
+    }
+  });
+
+  // nama penulis terlaris
+  let penulisTerlaris = [];
+  const namaPenulis = dataPenjualanNovel.map((object) => {
+    let i;
+    if (object.totalTerjual == max) {
+      i = object.penulis;
+      penulisTerlaris.push(i);
+    }
+  });
+
+  // format rupiah
+  function rupiah(harga) {
+    const numb = harga;
+    const format = numb.toString().split("").reverse().join("");
+    const convert = format.match(/\d{1,3}/g);
+    const rupiah = "Rp " + convert.join(".").split("").reverse().join("");
+    return rupiah;
+  }
+
+  const info = {
+    totalKeuntungan: rupiah(sumKeuntungnAkhir),
+    totalModal: rupiah(sumModal),
+    persentaseKeuntungan: `${percentage.toFixed(2)}%`,
+    productBukuTerlaris: productName.toString(),
+    penulisTerlaris: penulisTerlaris.toString(),
+  };
+
+  return info;
 }
 
 console.log(getInfoPenjualan(dataPenjualanNovel));

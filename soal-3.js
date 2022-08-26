@@ -9,4 +9,4 @@ const checkEmail = (email) => {
   return result;
 };
 
-console.log(checkEmail("frans@gmail.co.id"));
+console.log(checkEmail("frans@binar.co.id"));

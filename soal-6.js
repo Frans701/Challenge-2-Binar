@@ -1,4 +1,4 @@
-const dataAngka = [1, 2, 3, 4];
+const dataAngka = [1, 2, 3, 4, 5];
 
 const getAngkaTerbesarKedua = (dataAngka) => {
   let angkaBesar = dataAngka[0];
