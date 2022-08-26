@@ -1,4 +1,4 @@
-function checkEmail(email) {
+const checkEmail = (email) => {
   let regex = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/);
   let result;
   if (regex.test(email)) {
@@ -7,6 +7,6 @@ function checkEmail(email) {
     result = `password ${email} INVALID`;
   }
   return result;
-}
+};
 
 console.log(checkEmail("123456789"));

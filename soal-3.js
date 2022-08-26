@@ -1,4 +1,4 @@
-function checkEmail(email) {
+const checkEmail = (email) => {
   let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
   let result;
   if (regex.test(email)) {
@@ -7,6 +7,6 @@ function checkEmail(email) {
     result = `Alamat ${email} INVALID`;
   }
   return result;
-}
+};
 
 console.log(checkEmail("frans@gmail.co.id"));

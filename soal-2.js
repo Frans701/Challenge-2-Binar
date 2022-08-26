@@ -1,13 +1,13 @@
-let number;
-
-function bilangan(number) {
+const checkTypeNumber = (givenNumber) => {
   let result;
-  if (number % 2 == 0) {
+  if (givenNumber % 2 == 0) {
     result = "bilangan genap";
-  } else {
+  } else if (givenNumber % 2 == 1) {
     result = "bilangan ganjil";
+  } else {
+    result = "masukkan bilangan";
   }
   return result;
-}
+};
 
-console.log(bilangan(5));
+console.log(checkTypeNumber(7));

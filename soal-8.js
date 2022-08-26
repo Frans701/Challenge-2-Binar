@@ -64,9 +64,9 @@ function getInfoPenjualan(dataPenjualanNovel) {
     sumKeuntungnAkhir += sumHargaBeliStok[i] + sumHargaJualStok[i];
   }
 
-  percentage = (sumKeuntungnAkhir / sumModal) * 100;
+  percentage = (sumKeuntungnAkhir / sumModal) * 1;
 
-  return ` ${sumKeuntungnAkhir}, ${sumModal}, ${percentage}`;
+  return ` ${sumKeuntungnAkhir}, ${sumModal}, ${percentage.toFixed(2)}%`;
 }
 
 console.log(getInfoPenjualan(dataPenjualanNovel));

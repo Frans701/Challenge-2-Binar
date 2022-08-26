@@ -1,4 +1,6 @@
-function getAngkaTerbesarKedua(dataAngka) {
+const dataAngka = [1, 2, 3, 4];
+
+const getAngkaTerbesarKedua = (dataAngka) => {
   let angkaBesar = dataAngka[0];
   let angkaBesarKedua = 0;
 
@@ -11,8 +13,6 @@ function getAngkaTerbesarKedua(dataAngka) {
     }
   }
   return angkaBesarKedua;
-}
+};
 
-const dataAngka = [1, 2, 3, 4];
-
-console.log(getAngkaTerbesarKedua());
+console.log(getAngkaTerbesarKedua(dataAngka));

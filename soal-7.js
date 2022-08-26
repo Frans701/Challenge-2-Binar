@@ -1,32 +1,38 @@
-function hitungTotalPenjualan(dataPenjualan) {
-  let sum = 0;
-
-  for (let i = 0; i < dataPenjualan.length; i++) {
-    sum += dataPenjualan[i].totalTerjual;
-  }
-
-  return sum;
-}
-
-const dataPenjualan = [
+const dataPenjualanPakAldi = [
   {
-    namaProduct: "sepatu",
-    hargaSatuan: 7000,
-    kategori: "sepatu",
+    namaProduct: "Sepatu Futsal Nike Vapor Academy 8",
+    hargaSatuan: 760000,
+    kategori: "Sepatu Sport",
     totalTerjual: 90,
   },
   {
-    namaProduct: "sepatu",
-    hargaSatuan: 7000,
-    kategori: "sepatu",
+    namaProduct: "Sepatu Warrior Tristan Black Brown High",
+    hargaSatuan: 960000,
+    kategori: "Sepatu Sneaker",
+    totalTerjual: 37,
+  },
+  {
+    namaProduct: "Sepatu Warrior Tristan Maroon High ",
+    kategori: "Sepatu Sneaker",
+    hargaSatuan: 360000,
     totalTerjual: 90,
   },
   {
-    namaProduct: "sepatu",
-    hargaSatuan: 7000,
-    kategori: "sepatu",
+    namaProduct: "Sepatu Warrior Rainbow Tosca Corduroy",
+    hargaSatuan: 120000,
+    kategori: "Sepatu Sneaker",
     totalTerjual: 90,
   },
 ];
 
-console.log(hitungTotalPenjualan(dataPenjualan)); // 👉️ 60
+const hitungTotalPenjualan = (dataPenjualanPakAldi) => {
+  let sum = 0;
+
+  for (let i = 0; i < dataPenjualanPakAldi.length; i++) {
+    sum += dataPenjualanPakAldi[i].totalTerjual;
+  }
+
+  return sum;
+};
+
+console.log(hitungTotalPenjualan(dataPenjualanPakAldi));
