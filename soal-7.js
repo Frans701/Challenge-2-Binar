@@ -1,8 +1,8 @@
 function hitungTotalPenjualan(dataPenjualan) {
   let sum = 0;
 
-  for (let index = 0; index < dataPenjualan.length; index++) {
-    sum += dataPenjualan[index].totalTerjual;
+  for (let i = 0; i < dataPenjualan.length; i++) {
+    sum += dataPenjualan[i].totalTerjual;
   }
 
   return sum;
