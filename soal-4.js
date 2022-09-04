@@ -1,12 +1,20 @@
-const checkEmail = (email) => {
+const isValidPassword = (givenPassword) => {
   let regex = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/);
-  let result;
-  if (regex.test(email)) {
-    result = `password ${email} VALID`;
-  } else {
-    result = `password ${email} INVALID`;
+  if (givenPassword === undefined) {
+    return "Bro where is the parameter?";
   }
-  return result;
+  if (typeof givenPassword !== "string") {
+    return "Error: Invalid data type";
+  } else if (regex.test(givenPassword)) {
+    return regex.test(givenPassword);
+  } else {
+    return regex.test(givenPassword);
+  }
 };
 
-console.log(checkEmail("Fr199dhjja"));
+console.log(isValidPassword("Meong2021"));
+console.log(isValidPassword("meong2021"));
+console.log(isValidPassword("@eong"));
+console.log(isValidPassword("Meong2"));
+console.log(isValidPassword(0)); // ERROR: Karena bukan tipe data string, Error: Invalid data type
+console.log(isValidPassword()); // ERROR: undefined
